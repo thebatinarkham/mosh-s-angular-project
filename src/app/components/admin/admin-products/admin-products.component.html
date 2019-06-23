@@ -1,0 +1,51 @@
+<main class="main-container col s9 store u-margin-top-small push-s3">
+
+
+  <div class="row">
+
+    <header class="main-header ">
+      <br>
+      <br>
+      <br>
+      <a class="btn " [routerLink]="['/admin/products/new']" routerLinkActive="router-link-active">
+        <i class="fas fa-folder-open"></i> New products
+      </a>
+    </header>
+
+    <div class="main-content">
+
+      <table class="row-border hover responsive-table highlight">
+
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Item Name</th>
+            <th>Item key</th>
+            <th>
+              <div class="input-field col s12">
+                <input id="email" #query (keyup)="filter(query.value)" type="email" class="validate">
+                <span class="helper-text" data-error="wrong" data-success="right">Search item</span>
+              </div>
+            </th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let p of fiteredProducts">
+            <td>{{ p.title }}</td>
+            <td>{{ p.price}} </td>
+            <td>{{ p.key}}</td>
+            <td>
+                <a [routerLink]="['/admin/products/',p.key]" routerLinkActive=""> Edit</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+
+    </div>
+
+  </div>
+
+
+</main>

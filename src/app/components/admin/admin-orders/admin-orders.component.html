@@ -1,0 +1,27 @@
+<main class="main-container col s9 store u-margin-top-small push-s3">
+  <h4>Orders</h4>
+  <table class="col s8 table hover responsive-table highlight">
+    <thead>
+      <tr>
+        <th>Customer</th>
+        <th>Date</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of orders$ | async">
+        <td>{{ order.shipping.name }}</td>
+        <td>{{ order.datePlaced | date}}</td>
+        <td>
+            <a [routerLink]="['/admin/orders/detail/',order.key ]" routerLinkActive=""> View</a>
+        </td>
+        
+      </tr>
+      
+    </tbody>
+    
+  </table>
+  
+</main>
+
+

@@ -1,0 +1,23 @@
+<div class=" u-margin-top-tiny " >
+    <!-- <h4 class="header">Order Summary</h4> -->
+    <div class="card horizontal col-s3">
+      <div class="card-stacked">
+        <div class="card-content">
+          <p>You have {{cart.totalItemsCount}} items in your shopping-cart.</p>
+        </div>
+        <div class="card-action">
+          <ul *ngFor="let item of cart.items">
+            <li class="">{{item.quantity}} x {{item.title}}</li>
+            <li class="right-align">{{item.totalPrice |  currency }}</li>
+            
+          </ul>
+          <ul>
+            <li>Total </li>
+            <li class="right-align">{{cart.totalPrice | currency}}</li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+  </div>
+        

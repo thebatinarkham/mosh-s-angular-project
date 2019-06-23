@@ -1,0 +1,66 @@
+<div class="col s3" style="position: fixed">
+  <div class="title teal-text font-weight-big seed__text ">
+    <a href="" [routerLink]="['/']" routerLinkActive="router-link-active">Shooppy</a>
+  </div>
+
+  <div class="collection ">
+    <a class="collection-item active" [routerLink]="['/']" routerLinkActive="router-link-active">
+      <i class="fas fa-achive"></i> Home
+    </a>
+
+    <a class="collection-item" [routerLink]="['my/orders']" routerLinkActive="router-link-active">
+      <i class="fas fa-archive"></i>My Order
+    </a>
+    <a class="collection-item" [routerLink]="['shopping-cart']" routerLinkActive="router-link-active">
+      <i class="fas fa-cart-plus"></i> Cart
+      <span class="new badge" *ngIf="cart$ | async as cart ">{{ cart.totalItemsCount }}</span>
+    </a>
+    <a class="collection-item " [routerLink]="['/admin/products/new']" routerLinkActive="router-link-active">
+      <i class="fas fa-folder-open"></i> Forms
+    </a>
+
+    <ng-container *ngIf="appUser">
+      <div *ngIf="appUser.isAdmin">
+        <a class="collection-item " [routerLink]="['admin/orders']" routerLinkActive="router-link-active">
+          <i class="fas fa-archive"></i>Manage Orders
+        </a>
+        <a class="collection-item " [routerLink]="['admin/products']" routerLinkActive="router-link-active">
+          <i class="fas fa-archive"></i>Manage Products
+        </a>
+
+        <a class="collection-item">
+          <i class="fas fa-cart-plus"></i>
+        </a>
+      </div>
+    </ng-container>
+    <a class="collection-item" *ngIf="!appUser">
+      <i class="fas fa-cart-plus"></i>
+    </a>
+
+
+  </div>
+
+  <ng-container *ngIf="appUser ; else anonymousUser">
+    <ul class="collection u-margin-top-tiny" *ngIf="appUser">
+      <li class="collection-item avatar">
+        <img [src]="appUser.imageUrl" alt="" class="circle">
+        <!-- <span class="title">Email: {{ appUser.name }}</span> -->
+        <span class="title">Email: {{ appUser.email }}</span>
+
+      </li>
+
+    </ul>
+    <a class="font-weight-big seed__text btn" (click)="logout()">
+      Logout</a>
+  </ng-container>
+
+
+
+  <ng-template #anonymousUser>
+    <a class="font-weight-big seed__text btn" (click)="login()">
+      Login</a>
+  </ng-template>
+
+
+
+</div>

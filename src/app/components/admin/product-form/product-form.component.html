@@ -1,0 +1,84 @@
+<main class="col-s9 u-margin-top-tiny ">
+  <div class="row ">
+    <form class="col s5 push-s3" (ngSubmit)="save(f.value)" #f="ngForm">
+  
+      <h4 class="font-weight-medium u-margin-top-small">Product Form</h4>
+  
+      <div class="row">
+        <div class="input-field col s10">
+  
+          <input id="product" type="text" class="validate" [(ngModel)]="product.title" ngModel name="title"
+            #title="ngModel" placeholder="Product Name" class="active" required minlength="3"
+            maxlength="20" pattern="">
+          <div class="red-text" *ngIf="title.touched && title.invalid">
+            <div class="" *ngIf="title.errors">First Name is Require</div>
+            <div class="" *ngIf="title.errors.minlength">
+              First Name should be Minimum 4 Charecter but actual Length is
+              {{title.errors.minlength.actualLength}}
+            </div>
+            <!-- <div class="" *ngIf="title.errors.minlength">Doesn't match pattern</div> -->
+          </div>
+  
+        </div>
+  
+        <div class="input-field col s10">
+          <i class="fas fa-dollar-sign prefix"></i>
+          <input id="price" type="number" class="validate" [(ngModel)]="product.price" name="price" #price="ngModel"
+            required #price="ngModel" placeholder="Product price" [min]="0">
+          <div class="red-text" *ngIf="price.touched && price.invalid">
+            <div class="red-text" *ngIf="price.errors.required">Price is required...</div>
+            <div class="red-text" *ngIf="price.errors.min">
+              Price should be 0 or higher...</div>
+          </div>
+  
+  
+        </div>
+  
+      </div>
+  
+      <select class="browser-default  col s4 u-bottom-top-huge form-control" [(ngModel)]="product.category"
+        name="category">
+        <option  id="category">{{product.category }}</option>
+        <option *ngFor="let c of categories$ | async" id="category">
+          {{ c.name }}
+        </option>
+      </select>
+  
+  
+      <div class="input-field col s10">
+        <input id="imageUrl" type="url" class="validate" name="imageUrl" [(ngModel)]="product.imageUrl" #Image="ngModel"
+          placeholder="Image Url" required url>
+        <div class="red-text" *ngIf="Image.touched && Image.invalid">
+          <div class="" *ngIf="Image.errors.require">Imageurl is required...</div>
+          <div class="" *ngIf="Image.errors.url">Please Enter valid Url...</div>
+        </div>
+  
+      </div>
+  
+      <div class="row">
+        <button class="col s3 btn" [disabled]="!f.valid">Save</button>
+        <button class="col s3 btn push-s1 grey lighten-5  blue-grey-text" type="button" (click)="delete()"
+          [disabled]="!f.valid">
+          Delete</button>
+      </div>
+      <!-- <p>{{f.value | json}}</p>   -->
+      <!-- <div class="" ngModelGroup="order"></div> nested object for form group-->
+    </form>
+  
+  
+    <!-- preview form -->
+    <div class="col push-s3 s3 u-margin-top-small">
+      <product-card [product]="product" [show-actions]="false"></product-card>
+      <pre>{{product | json}}</pre>
+    </div>
+  
+  
+  </div>
+  
+  <!-- // template
+  <div *ngIf="product$ | async as product">
+    pro price  is {{product.category}}.
+    <pre>{{product | json}}</pre>
+  </div> -->
+
+</main>

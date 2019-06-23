@@ -1,0 +1,23 @@
+
+
+<br>
+       <br>
+
+       <div class="sticky-top" style=" display:  inline-block; padding-left: 15px">
+        <div class="">
+            <a
+              class=""
+              [class.active]="!category"
+              routerLink="/"
+              >All Categories</a>
+            <a 
+              *ngFor="let c of categories$ | async" 
+              routerLink="/"
+              [queryParams]="{ category: c.key }"
+              class=""
+              [class.active]="category === c.name"
+              >
+              {{ c.name }}
+            </a>
+          </div>
+      </div>

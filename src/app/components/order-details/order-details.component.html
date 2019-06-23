@@ -1,0 +1,81 @@
+<main class="main-container col s9 store u-margin-top-small push-s3">
+
+
+  <div class="row">
+
+    <header class="main-header u-margin-top-small">
+      <!-- <h4>ship to</h4> -->
+      <!-- this should be adress will implemented in future... -->
+    </header>
+    <div class="main-content">
+      <h4>Items in orders</h4>
+      <table class="col s8 row-border hover responsive-table highlight ">
+
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>quantity</th>
+            <th>Totals</th>
+          </tr>
+
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let item of product ">
+            <td>
+              {{item.product.title }}
+            </td>
+            <td>
+              {{item.product.price }}
+            </td>
+            <td>
+              {{item.quantity }}
+            </td>
+            <td>
+              {{item.totalPrice }}
+            </td>
+
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</main>
+
+
+
+<!-- <div class=""*ngIf="product"> -->
+<!-- <pre>{{product.items | json}}</pre> -->
+
+<!-- <ul *ngFor="let item of product.items  | keyvalue">
+          {{item.key}}:{{item.value}}
+          <ul *ngFor="let i of item | keyvalue">
+            {{i}}
+            
+          </ul>
+      </ul> -->
+<!-- </div> -->
+
+<!-- <ul *ngFor="let item of items: let i = index">
+          <li *ngFor="let i of product  | keys">
+              <pre>{{i.key}}:{{i.value}}</pre>
+          </li>
+        </ul> -->
+
+        <!-- <ul *ngFor="let item of product ; let i  = index">
+            <li *ngFor="let i of product[i].product  | keyvalue">
+                {{i.key}}
+            </li>
+          </ul> -->
+<!-- <ul *ngFor="let item of product  ; let i  = index">
+          <li *ngFor="let i of product[i].product  | keys">
+              {{i}}
+          </li>
+        </ul> -->
+<!-- <main class="ma`in-container col s9 store u-margin-top-small push-s3" *ngIf="product"> 
+   <ul *ngFor="let item of product.items[0]">
+    <li>{{item}}</li>
+  </ul>
+ </main> -->

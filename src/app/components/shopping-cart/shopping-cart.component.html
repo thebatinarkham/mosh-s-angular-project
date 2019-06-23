@@ -1,0 +1,66 @@
+<main class="main-container col s9 store u-margin-top-small push-s3">
+
+
+    
+    <ng-container *ngIf="cart$ | async as cart">
+        <header class="main-header">
+            <br>
+            <br>
+        
+
+      
+      <div class=" col s9 push s3">
+        <h5>Shopping-carts</h5>
+
+        <p>You have {{ cart.totalItemsCount }} items in your cart
+          <button *ngIf="cart.items.length" (click)="clearCart()" class=" waves-effect waves-grey darken-1 btn-flat"
+            cart.items.length>
+            Clear Shopping Cart
+          </button>
+        </p>
+
+
+      </div>
+      </header>
+      <div class="col s9 u-margin-top-medium">
+        <table class="">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Name</th>
+              <th>Quantity</th>
+              <th>price</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr *ngFor="let item of cart.items">
+              <td>
+
+                <img [src]="item.imageUrl" alt="" class="circle responsive-img " style="width: 80px; height: 80px">
+              </td>
+              <td>
+                {{ item.title }}
+              </td>
+              <td style="">
+                <product-quantity [product]="item" [shopping-cart]="cart"></product-quantity>
+              </td>
+              <td>
+                {{ item.totalPrice | currency}}
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <th>{{cart.totalPrice | currency}}</th>
+            </tr>
+          </tbody>
+        </table>
+        <a class="btn" [routerLink]="['/check-out']" routerLinkActive="router-link-active"  *ngIf="cart.items.length">Check-out</a>
+      </div>
+    </ng-container>
+
+
+  <!-- <pre>{{cart$ | async | json }}</pre> -->
+</main>

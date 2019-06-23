@@ -1,0 +1,14 @@
+<div class="row ">
+    <div class="col s3">
+      <button class="btn btn-small" (click)="removeFromCart()">
+         -</button>
+    </div>
+    <div class="col s3 center-align">
+      {{ shoppingCart.getQuantity(product) }} in   cart
+    </div>
+    <div class="col  s6">
+      <button class="btn btn-small" (click)="addToCart()">
+         +</button>
+    </div>
+    
+  </div>

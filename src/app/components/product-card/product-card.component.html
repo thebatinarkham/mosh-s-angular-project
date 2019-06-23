@@ -1,0 +1,23 @@
+<div class="card" *ngIf="product.title">
+    <div class="card-image waves-effect waves-block waves-light">
+        <img class="activator" src="{{product.imageUrl}}" class="responsive-img" style="height: 180px"> 
+    </div>
+    <div class="card-content">
+        <h5>{{product.title}}</h5>
+        <h6>{{product.price | currency}}</h6>
+
+        <div class="card-action " style="padding:  3px 0px 0px 0px;" *ngIf="showActions && shoppingCart">
+            <button class="btn " *ngIf="shoppingCart.getQuantity(product) === 0;else updateQuantity"
+            (click)="addToCart()">
+            ADD TO CART</button>
+            <ng-template #updateQuantity>
+                <product-quantity [product]="product" [shopping-cart]="shoppingCart"></product-quantity>
+            </ng-template>
+
+              
+      </div>
+    
+    </div>
+</div>
+
+  

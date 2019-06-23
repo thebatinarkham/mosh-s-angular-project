@@ -1,0 +1,8 @@
+ <main class="main-container col s9 store  push-s3 " *ngIf="cart$ | async as cart"> 
+    <div class="col s6  ">
+        <shipping-form [cart]="cart"></shipping-form>  
+    </div>
+    <div class="col s4  u-margin-top-small">
+        <shopping-cart-summary [cart]="cart"></shopping-cart-summary>
+    </div>
+</main>

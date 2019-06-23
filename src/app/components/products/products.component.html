@@ -1,0 +1,28 @@
+<main class="main-container col s9 store u-margin-top-small push-s3">
+
+  
+<div class="row">
+    
+    <header class="main-header ">
+      <product-filter [category]="category"></product-filter>
+    </header>
+    
+    <div class="main-content" *ngIf="cart$ | async as cart">
+      
+          <ng-container *ngFor="let p of filteredProducts; let i = index">
+            <div class="col s4 " >
+              <product-card [product]="p" [shopping-cart]="cart"></product-card>
+              
+              </div>
+          </ng-container>
+        </div>
+    
+  </div>
+
+
+   <!-- <pre>{{cart | json}}</pre>     -->
+   
+</main>
+
+
+

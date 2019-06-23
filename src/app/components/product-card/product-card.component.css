@@ -1,0 +1,11 @@
+.card {
+    height: 350px;
+}
+.btn{
+    width: -webkit-fill-available;
+}
+.row .col {
+    letter-spacing: 1px;
+    padding: 0 0rem;
+ 
+}
