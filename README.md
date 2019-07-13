@@ -5,7 +5,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Live project at https://batinarkham-ac33f.firebaseapp.com/
 
 
-![alt text](https://github.com/thebatinarkham/mosh-s-angular-project/tree/master/shoppy/Capture.PNG " ")
+![alt text](https://github.com/thebatinarkham/mosh-s-angular-project/tree/master/shoppy/Capture.PNG )
 
 ## Development server
 
