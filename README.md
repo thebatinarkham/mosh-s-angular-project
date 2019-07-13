@@ -8,7 +8,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ![alt text](https://github.com/thebatinarkham/mosh-s-angular-project/tree/master/shoppy/Capture.PNG )
 
 ### Important note :
-I had put admin-guard on Form and My order option to it will redirect you home page if you not admin...just change your firebase while you use it.
+I had put admin-guard on Form and My order option to it will redirect you home page if you not admin...just change your firebase while you use it and login is require for check-out ,
 
 ## Development server
 
