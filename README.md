@@ -4,7 +4,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Live project at https://batinarkham-ac33f.firebaseapp.com/
 
-[logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 2"
+
+![alt text](https://github.com/thebatinarkham/mosh-s-angular-project/tree/master/shoppy/Capture.PNG " ")
 
 ## Development server
 
