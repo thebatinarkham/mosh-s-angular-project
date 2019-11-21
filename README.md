@@ -2,7 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
 
-## Live project at https://batinarkham-ac33f.firebaseapp.com/
+
 
 
 ![alt text](https://github.com/thebatinarkham/mosh-s-angular-project/tree/master/shoppy/Capture.PNG )
